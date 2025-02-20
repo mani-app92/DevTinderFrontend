@@ -1,11 +1,16 @@
 import React from 'react'
-import NavBar from './components/NavBar';
+import { Routes, Route } from "react-router";
+import Layout from './layout';
 
 const App = () => {
   return(
     <>
-      <NavBar />
-      <h1>Hello World</h1>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route path='/login' element={<p>Login Screen</p>} />
+          <Route path='/logout' element={<p>logout Screen</p>} />
+        </Route>
+      </Routes>
     </>
   )
 }
